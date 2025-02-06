@@ -10,53 +10,8 @@ public class RawSocketServer {
     private static String reset = "\u001B[0m";
     private static String red = "\u001B[31m";
 
-    //private in 
 
-    private static <T> String validateValue(T var, String input, String category, BufferedReader in, PrintWriter out) {
-        String name =  var.getClass().getSimpleName();
-        boolean valid = false;
-        switch (name) {
-            case "Integer":
-                while (valid == false) {
-                    try {
-                        int num = Integer.parseInt(input);
-                        valid = true;
-                    } catch (Exception initialE) {
-                        out.println(red + "INVALID");
-                        out.println(reset + "Please enter a valid " + category);
-                        
-                        try {
-                            input = in.readLine();
-                        } catch (Exception e) {
 
-                        } 
-                    }
-                }
-
-                break;
-            case "Float":
-            while (valid == false) {
-                    try {
-                        float num = Float.parseFloat(input);
-                        valid = true;
-                    } catch (Exception initialE) {
-                        out.println(red + "INVALID");
-                        out.println(reset + "Please enter a valid " + category);
-                        
-                        try {
-                            input = in.readLine();
-                        } catch (Exception e) {
-
-                        } 
-                    }
-                }  
-                break; 
-            default:
-                out.println(red + "INVALID");
-                break;
-        }
-        return input;
-    }
 
 
 
